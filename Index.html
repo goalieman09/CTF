@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url('https://img.freepik.com/free-vector/black-background-with-focus-spot-light_1017-27230.jpg?t=st=1741797509~exp=1741801109~hmac=7e994e6646c530962e43f038d2952e7004df22d5663e07120ace131d8b877420&w=1060');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+
+    }
+
+    h2welcome {
+      font-size: 100px;
+      color: white;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    h3listYears {
+      font-size: 50px;
+      color: white;
+      position: absolute;
+
+      transform: translate(-50%, -50%);
+    }
+
+    h2Regular {
+      font-size: 40px;
+      color: transparent;
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .bottom-right {
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      width: 150px;
+    }
+
+    .top-right {
+      position: absolute;
+      bottom: 82%;
+      right: 5%;
+      width: 150px;
+    }
+
+    .top-left {
+      position: absolute;
+      bottom: 74%;
+      left: 5%;
+      width: 150px;
+    }
+
+    .bottom-left {
+      position: absolute;
+      bottom: 5%;
+      left: 5%;
+      width: 150px;
+    }
+
+    input {
+      padding: 8px;
+      font-size: 16px;
+      bottom: 74%;
+      left: 5%;
+    }
+
+    button {
+      padding: 8px 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    /* Centering the answer box */
+    bodyAnswerBox {
+      position: absolute;
+      top: auto;
+      /* This ensures it's not stuck to the top */
+      bottom: 20%;
+      /* Adjust this value to move it up or down from the bottom */
+      left: 50%;
+      transform: translate(-50%, 0%);
+      text-align: center;
+    }
+
+    bodyAnswerBox input {
+      padding: 10px;
+      font-size: 16px;
+      width: 250px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    bodyAnswerBox button {
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: red;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <h2welcome>Welcome</h2welcome>
+  <h3listYears style="top: 90%;
+    left: 30%;">2018-19</h3listYears>
+  <h3listYears style="top: 90%;
+    left: 70%;">2014-15</h3listYears>
+  <h3listYears style="top: 10%;
+    left: 70%;">2012-13</h3listYears>
+  <h3listYears style="top: 10%;
+    left: 30%;">2020-21</h3listYears>
+  <script src="script.js"></script>
+</body>
+
+<bodyMontreal>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Montreal_Canadiens.svg" alt="NHL Logo"
+    class="bottom-right">
+</bodyMontreal>
+<bodyColumbus>
+  <img src="https://upload.wikimedia.org/wikipedia/en/5/5d/Columbus_Blue_Jackets_logo.svg" alt="NHL Logo"
+    class="top-right">
+</bodyColumbus>
+<bodyVegas>
+  <img src="https://upload.wikimedia.org/wikipedia/en/a/ac/Vegas_Golden_Knights_logo.svg" alt="NHL Logo"
+    class="top-left">
+</bodyVegas>
+<bodyTampaBay>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Tampa_Bay_Lightning_2011.svg" alt="NHL Logo"
+    class="bottom-left">
+</bodyTampaBay>
+
+<body>
+  <h2Regular>... .. ..... .... .. . .. .... .... .. .... ... .... .... ... ... . . ... .. . ..... .. .... .... ... .. ..
+    . ..... ... .... .... .. .. .. . ..... .. .... . . ... .. . . ..... .. . . .... .. . .... . ..... . .... ... ....
+    ... ... . ... . ..... . . ..... .... . ..... . . .... .. </h2Regular>
+</body>
+
+<bodyAnswerBox>
+  <input type="text" id="answer" placeholder="Submit Answer Here....">
+  <button onclick="checkAnswer()">Submit</button>
+  <p id="result"></p>
+
+  <script>
+    function checkAnswer() {
+      let userInput = document.getElementById("answer").value;
+      let correctAnswer = "Vezina"; // Replace with actual flag
+
+      if (userInput === correctAnswer) {
+        document.getElementById("result").innerHTML = "✅ Correct!";
+      } else {
+        document.getElementById("result").innerHTML = "❌";
+      }
+    }
+  </script>
+</bodyAnswerBox>
+
+</html>
