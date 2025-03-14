@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Replit</title>
+  <title>replit</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <style>
     * {
@@ -30,7 +30,7 @@
       transform: translate(-50%, -50%);
     }
 
-    .list-years {
+    .listYears {
       font-size: 50px;
       color: white;
       position: absolute;
@@ -39,7 +39,7 @@
 
     .regular {
       font-size: 40px;
-      color: white;
+      color: transparent;
       position: absolute;
       top: 80%;
       left: 50%;
@@ -55,14 +55,14 @@
 
     .top-right {
       position: absolute;
-      top: 5%;
+      top: 10%;
       right: 5%;
       width: 150px;
     }
 
     .top-left {
       position: absolute;
-      top: 5%;
+      top: 10%;
       left: 5%;
       width: 150px;
     }
@@ -74,62 +74,58 @@
       width: 150px;
     }
 
-    .answer-box {
+    input {
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 8px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    #result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    /* Centering the answer box */
+    .answerBox {
       position: absolute;
       bottom: 20%;
       left: 50%;
       transform: translate(-50%, 0%);
       text-align: center;
     }
-
-    .answer-box input {
-      padding: 10px;
-      font-size: 16px;
-      width: 250px;
-      margin-top: 10px;
-      border: none;
-      border-radius: 5px;
-    }
-
-    .answer-box button {
-      padding: 10px 15px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 10px;
-      border: none;
-      border-radius: 5px;
-      background-color: red;
-      color: white;
-    }
   </style>
 </head>
 
 <body>
+
   <h2 class="welcome">Welcome</h2>
-  <h3 class="list-years" style="top: 90%; left: 30%;">2018-19</h3>
-  <h3 class="list-years" style="top: 90%; left: 70%;">2014-15</h3>
-  <h3 class="list-years" style="top: 10%; left: 70%;">2012-13</h3>
-  <h3 class="list-years" style="top: 10%; left: 30%;">2020-21</h3>
 
-  <div class="bottom-right">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Montreal_Canadiens.svg" alt="Montreal Canadiens Logo">
-  </div>
+  <h3 class="listYears" style="top: 90%; left: 30%;">2018-19</h3>
+  <h3 class="listYears" style="top: 90%; left: 70%;">2014-15</h3>
+  <h3 class="listYears" style="top: 10%; left: 70%;">2012-13</h3>
+  <h3 class="listYears" style="top: 10%; left: 30%;">2020-21</h3>
 
-  <div class="top-right">
-    <img src="https://upload.wikimedia.org/wikipedia/en/5/5d/Columbus_Blue_Jackets_logo.svg" alt="Columbus Blue Jackets Logo">
-  </div>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Montreal_Canadiens.svg" alt="Montreal Canadiens Logo" class="bottom-right">
+  <img src="https://upload.wikimedia.org/wikipedia/en/5/5d/Columbus_Blue_Jackets_logo.svg" alt="Columbus Blue Jackets Logo" class="top-right">
+  <img src="https://upload.wikimedia.org/wikipedia/en/a/ac/Vegas_Golden_Knights_logo.svg" alt="Vegas Golden Knights Logo" class="top-left">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Tampa_Bay_Lightning_2011.svg" alt="Tampa Bay Lightning Logo" class="bottom-left">
 
-  <div class="top-left">
-    <img src="https://upload.wikimedia.org/wikipedia/en/a/ac/Vegas_Golden_Knights_logo.svg" alt="Vegas Golden Knights Logo">
-  </div>
+  <h2 class="regular">
+    ... .. ..... .... .. . .. .... .... .. .... ... .... .... ... ... . . ... .. . ..... .. .... .... ... .. ..
+    . ..... ... .... .... .. .. .. . ..... .. .... . . ... .. . . ..... .. . . .... .. . .... . ..... . .... ... ....
+    ... ... . ... . ..... . . ..... .... . ..... . . .... ..
+  </h2>
 
-  <div class="bottom-left">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Tampa_Bay_Lightning_2011.svg" alt="Tampa Bay Lightning Logo">
-  </div>
-
-  <h2 class="regular">... .. ..... .... .. . .. .... .... .. .... ... .... .... ... ... . . ... .. . ..... .. .... .... ... .. .. . ..... ... .... .... .. .. .. . ..... .. .... . . ... .. . . ..... .. . . .... .. . .... . ..... . .... ... .... ... ... . ... . ..... . . ..... .... . ..... . . .... .. </h2>
-
-  <div class="answer-box">
+  <div class="answerBox">
     <input type="text" id="answer" placeholder="Submit Answer Here....">
     <button onclick="checkAnswer()">Submit</button>
     <p id="result"></p>
@@ -138,9 +134,9 @@
   <script>
     function checkAnswer() {
       let userInput = document.getElementById("answer").value;
-      let correctAnswer = "Vezina"; // Replace with actual flag
+      let correctAnswer = "Vezina"; // Replace with actual answer
 
-      if (userInput === correctAnswer) {
+      if (userInput.trim().toLowerCase() === correctAnswer.toLowerCase()) {
         document.getElementById("result").innerHTML = "✅ Correct!";
       } else {
         document.getElementById("result").innerHTML = "❌";
